@@ -1,7 +1,7 @@
-App = Ember.Application.create();
+window.App = Ember.Application.create();
 
 App.Router.map(function() {
-  // put your routes here
+  this.resource('querystring', { path: '/' });
 });
 
 App.IndexRoute = Ember.Route.extend({
