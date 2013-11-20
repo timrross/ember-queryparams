@@ -1,0 +1,21 @@
+{
+  "name": "ember",
+  "version": "0.1.0",
+  "authors": [
+    "Tim Ross <timrross@gmail.com>"
+  ],
+  "description": "An Ember tutorial",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.2"
+  }
+}
