@@ -1,1 +1,46 @@
-design.html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ember Query Param</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <section id="query-param-app" class="container">
+      <header id="header">
+        <h1>Query Param Builder</h1>
+      </header>
+
+            <form class="form-inline" role="form">
+        <section id="input">
+          <div class="form-group">
+            <label for="url">Url</label>
+            <input type="text" id="url" placeholder="Add a url" class="form-control">
+          </div>
+        <section>
+
+        <section id="output">
+        <div class="form-group">
+              <label  class="sr-only" for="key1">param1</label>
+              <input type="text" class="form-control" id="key1" placeholder="param 1">
+              <label class="sr-only" for="value1">value1</label>
+              <input type="text" class="form-control" id="value1" placeholder="value 1">
+              <button type="button" class="close" aria-hidden="true">&times;</button>
+          </div>
+          <div class="form-group">  
+              <label  class="sr-only" for="key2">param1</label>
+              <input type="text" class="form-control" id="key2" placeholder="param 2">
+              <label class="sr-only" for="value2">value1</label>
+              <input type="text" class="form-control" id="value2" placeholder="value 2">
+              <button type="button" class="close" aria-hidden="true">&times;</button>
+            </div>
+        </section>
+      </form>
+    </section>
+
+    </body>
+</html>
