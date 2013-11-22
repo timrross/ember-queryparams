@@ -9,45 +9,52 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <script type="text/x-handlebars" data-template-name="application">
+  <script type="text/x-handlebars">
   <div class="container">
-  <section>
-  <header id="header">
-  <h1>{{appName}}</h1>
-  </header>
-  </section>
-
-  {{input type="text" id="url" placeholder="Add a url" value=rawUrl action="processUrl" on="keyPress" class="form-control"}}
-
-  {{outlet}}
-
+    <section>
+      <header id="header">
+        <h1>{{appName}}</h1>
+      </header>
+    </section>
+    <section>
+      {{outlet}}
+    </section>
   </div>
   </script>
 
   <script type="text/x-handlebars" data-template-name="index">
-  {{#if urlParams}}
-    {{#each}}
-    <input type="text" id="paramName">
+  {{input type="text" placeholder="Add a url" value=rawUrl action="updateRawUrl" on="keyPress" class="form-control"}}
 
-    <input type="text" id="paramValue">
+  <p>Normalized URI</p>
+  {{normalizedUrl}}
+
+  {{#if queryParams}}
+    {{#each queryParams}}
+    <div class="row">
+      <div class="col-sm-2">
+        {{input type="text" value=name class="form-control"}}
+      </div>
+      <div class="col-sm-9">
+        {{input type="text" value=value class="form-control"}}
+      </div>
+      <div class="col-sm-1">
+        <button type="button" class="close" aria-hidden="true" {{action "deleteQueryParam"}}>&times;</button>
+      </div>
+    </div>
     {{/each}}
   {{else}}
     <p>Enter a url with query sting parameters</p>
   {{/if}}
-  </script>
-
-  <script type="text/x-handlebars" data-template-name="params">
-
+  <button {{action "newQueryParam"}}>New query param</button>
   </script>
 
   <script src="bower_components/jquery/jquery.js"></script>
+  <script src="bower_components/uri.js/src/URI.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="js/libs/handlebars-1.0.0.js"></script>
   <script src="js/libs/ember-1.1.2.js"></script>
   <script src="js/libs/ember-data-1.0.0.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/router.js"></script>
-  <script src="js/controllers/application_controller.js"></script>
 </body>
 </html>
